@@ -1,0 +1,18 @@
+CREATE TABLE email_queue_emails (
+id int(11) UNSIGNED NOT NULL auto_increment,
+from_email varchar(250) NOT NULL default '',
+from_name varchar(250) NOT NULL default '',
+to_email varchar(250) NOT NULL default '',
+to_name varchar(250) NOT NULL default '',
+subject varchar(250) NOT NULL default '',
+message_html text,
+message_plain_text text,
+timestamp_created int(11) UNSIGNED NOT NULL default 0,
+timestamp_sent int(11) UNSIGNED NOT NULL default 0,
+headers text,
+category varchar(250) NOT NULL default '',
+is_sent tinyint(1) NOT NULL DEFAULT 0,
+PRIMARY KEY (id),
+KEY (category),
+KEY (is_sent)
+) ENGINE=MyISAM CHARSET=utf8;
